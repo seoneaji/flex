@@ -1,0 +1,263 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title></title>
+	<link rel="stylesheet" href="styles.css?20170216">
+</head>
+<body>
+
+<div class="wrap">
+	<div class="flex-wrap">
+		<h2>OUTPUT</h2>
+		<div class="flex-parent">
+			<div class="flex-child" style="background:hsl(400,50%,75%)">1</div>
+			<div class="flex-child" style="background:hsl(420,50%,75%)">2</div>
+			<div class="flex-child" style="background:hsl(440,50%,75%)">3</div>
+			<div class="flex-child" style="background:hsl(460,50%,75%)">4</div>
+			<div class="flex-child" style="background:hsl(480,50%,75%)">5</div>
+			<div class="flex-child" style="background:hsl(500,50%,75%)">6</div>
+			<div class="flex-child" style="background:hsl(520,50%,75%)">7</div>
+			<div class="flex-child" style="background:hsl(540,50%,75%)">8</div>
+			<div class="flex-child" style="background:hsl(560,50%,75%)">9</div>
+			<div class="flex-child" style="background:hsl(580,50%,75%)">10</div>
+		</div>
+		<div class="preview">parent <pre>{}</pre></div>
+		<div class="preview-child">child <pre>{}</pre></div>
+		<div class="preview-nth-child">:nth-child(2) <pre>{}</pre></div>
+		<div class="btn">
+			<button type="button" data-step-btn="0">All</button>
+			<button type="button" data-step-btn="1">팽창과 수축 </button>
+			<button type="button" data-step-btn="2">방향과 순서</button>
+			<button type="button" data-step-btn="3">정렬과 간격</button>
+		</div>
+	</div>
+
+	<div class="controls-container">
+		<div>
+			<h2>CHILD LENGTH</h2>
+			<input type="range" id="ChildCount" min="1" max="10" value="5" />
+			<h2>Display</h2>
+			<fieldset data-property="display">
+				<legend>display (parent)</legend>
+				<label><input type="radio" data-css-ctr name="display" value="flex" /> flex</label>
+				<label><input type="radio" data-css-ctr name="display" value="inline-flex" /> inline-flex</label>
+				<label><input type="radio" data-css-ctr name="display" value="block" /> block</label>
+				<button type="button" data-remove>REMOVE</button>
+			</fieldset>
+			<div data-step="1">
+				<h2>팽창과 수축</h2>
+				<fieldset  data-property="flex-grow" data-child-css data-longhand="flex">
+					<legend>flex-grow (child)</legend>
+					<input type="number" data-css-ctr name="flex-grow" title="flex-grow" />
+					<br /><span>default : 0</span>
+					<button type="button" data-remove>REMOVE</button>
+				</fieldset>
+				<fieldset data-property="flex-shrink" data-child-css data-longhand="flex">
+					<legend>flex-shrink (child)</legend>
+					<input type="number" data-css-ctr name="flex-shrink" title="flex-shrink" />
+					<br /><span>default : 1</span>
+					<button type="button" data-remove>REMOVE</button>
+				</fieldset>
+				<fieldset data-property="flex-basis" data-child-css data-longhand="flex">
+					<legend>flex-basis (child)</legend>
+					<input type="text" data-css-ctr name="flex-basis" title="flex-basis" style="width:150px;" />
+					<br /><span>default : auto</span>
+					<button type="button" data-remove>REMOVE</button>
+				</fieldset>
+				<fieldset data-property="flex" data-child-css data-shorthand="flex">
+					<legend>flex (child)</legend>
+					<input type="number" data-css-ctr name="flex" title="flex-grow" />
+					<input type="number" data-css-ctr name="flex" title="flex-shrink" />
+					<input type="text" data-css-ctr name="flex" title="flex-basis" />
+					<br /><span>default : 0 1 auto</span>
+					<button type="button" data-remove>REMOVE</button>
+				</fieldset>
+			</div>
+		</div>
+		<div data-step="2">
+			<h2>방향과 순서</h2>
+			<fieldset data-property="flex-direction" data-longhand="flex-flow">
+				<legend>flex-direction (parent)</legend>
+				<label><input type="radio" data-css-ctr name="flex-direction" value="row" /> row (default)</label>
+				<label><input type="radio" data-css-ctr name="flex-direction" value="row-reverse" /> row-reverse</label>
+				<label><input type="radio" data-css-ctr name="flex-direction" value="column" /> column</label>
+				<label><input type="radio" data-css-ctr name="flex-direction" value="column-reverse" /> column-reverse</label>
+				<button type="button" data-remove>REMOVE</button>
+			</fieldset>
+			<fieldset data-property="flex-wrap" data-longhand="flex-flow">
+				<legend>flex-wrap (parent)</legend>
+				<label><input type="radio" data-css-ctr name="flex-wrap" value="nowrap" /> nowrap (default)</label>
+				<label><input type="radio" data-css-ctr name="flex-wrap" value="wrap" /> wrap</label>
+				<label><input type="radio" data-css-ctr name="flex-wrap" value="wrap-reverse" /> wrap-reverse</label>
+				<button type="button" data-remove>REMOVE</button>
+			</fieldset>
+			<fieldset data-property="flex-flow" data-shorthand="flex-flow">
+				<legend>flex-flow (parent)</legend>
+				<label><input type="radio" data-css-ctr name="flex-flow" value="row nowrap" /> row nowrap (default)</label>
+				<label><input type="radio" data-css-ctr name="flex-flow" value="row-reverse nowrap" /> row-reverse nowrap</label>
+				<label><input type="radio" data-css-ctr name="flex-flow" value="column nowrap" /> column nowrap</label>
+				<label><input type="radio" data-css-ctr name="flex-flow" value="column-reverse nowrap" /> column-reverse nowrap</label>
+				<label><input type="radio" data-css-ctr name="flex-flow" value="row wrap" /> row wrap</label>
+				<label><input type="radio" data-css-ctr name="flex-flow" value="row-reverse wrap" /> row-reverse wrap</label>
+				<label><input type="radio" data-css-ctr name="flex-flow" value="column wrap" /> column wrap</label>
+				<label><input type="radio" data-css-ctr name="flex-flow" value="column-reverse wrap" /> column-reverse wrap</label>
+				<label><input type="radio" data-css-ctr name="flex-flow" value="row wrap-reverse" /> row wrap-reverse</label>
+				<label><input type="radio" data-css-ctr name="flex-flow" value="row-reverse wrap-reverse" /> row-reverse wrap-reverse</label>
+				<label><input type="radio" data-css-ctr name="flex-flow" value="column wrap-reverse" /> column wrap-reverse</label>
+				<label><input type="radio" data-css-ctr name="flex-flow" value="column-reverse wrap-reverse" /> column-reverse wrap-reverse</label>
+				<button type="button" data-remove>REMOVE</button>
+			</fieldset>
+			<hr />
+			<fieldset data-property="order" data-child-css>
+				<legend>order (child)</legend>
+				<label><input type="number" data-css-ctr name="order" /></label>
+				<span>default : 0</span>
+				<button type="button" data-remove>REMOVE</button>
+			</fieldset>
+		</div>
+		<div data-step="3">
+			<h2>정렬과 간격</h2>
+			<fieldset data-property="justify-content" class="pr_justify-content">
+				<legend>justify-content (parent)</legend>
+				<label><input type="radio" data-css-ctr name="justify-content" value="flex-start" /> flex-start (default)</label>
+				<label><input type="radio" data-css-ctr name="justify-content" value="flex-end" /> flex-end</label>
+				<label><input type="radio" data-css-ctr name="justify-content" value="center" /> center</label>
+				<label><input type="radio" data-css-ctr name="justify-content" value="space-between" /> space-between</label>
+				<label><input type="radio" data-css-ctr name="justify-content" value="space-around" /> space-around</label>
+				<button type="button" data-remove>REMOVE</button>
+			</fieldset>
+			<fieldset data-property="align-items" class="pr_align-items">
+				<legend>align-items (parent)</legend>
+				<label><input type="radio" data-css-ctr name="align-items" value="stretch" /> stretch (default)</label>
+				<label><input type="radio" data-css-ctr name="align-items" value="center" /> center</label>
+				<label><input type="radio" data-css-ctr name="align-items" value="flex-start" /> flex-start</label>
+				<label><input type="radio" data-css-ctr name="align-items" value="flex-end" /> flex-end</label>
+				<label><input type="radio" data-css-ctr name="align-items" value="baseline" /> baseline</label>
+				<button type="button" data-remove>REMOVE</button>
+			</fieldset>
+			<fieldset data-property="align-content" class="pr_align-content">
+				<legend>align-content (parent)</legend>
+				<label><input type="radio" data-css-ctr name="align-content" value="stretch" /> stretch (default)</label>
+				<label><input type="radio" data-css-ctr name="align-content" value="center" /> center</label>
+				<label><input type="radio" data-css-ctr name="align-content" value="flex-start" /> flex-start</label>
+				<label><input type="radio" data-css-ctr name="align-content" value="flex-end" /> flex-end</label>
+				<label><input type="radio" data-css-ctr name="align-content" value="space-between" /> space-between</label>
+				<label><input type="radio" data-css-ctr name="align-content" value="space-around" /> space-around</label>
+				<button type="button" data-remove>REMOVE</button>
+			</fieldset>
+			<fieldset data-property="align-self" class="pr_align-self" data-child-css>
+				<legend>align-self (child)</legend>
+				<label><input type="radio" data-css-ctr name="align-self" value="auto" /> auto (default)</label>
+				<label><input type="radio" data-css-ctr name="align-self" value="stretch" /> stretch</label>
+				<label><input type="radio" data-css-ctr name="align-self" value="center" /> center</label>
+				<label><input type="radio" data-css-ctr name="align-self" value="flex-start" /> flex-start</label>
+				<label><input type="radio" data-css-ctr name="align-self" value="flex-end" /> flex-end</label>
+				<label><input type="radio" data-css-ctr name="align-self" value="baseline" /> baseline</label>
+				<button type="button" data-remove>REMOVE</button>
+			</fieldset>
+		</div>
+		<div>
+			<h2>nth-child(2)</h2>
+			<!-- <fieldset data-property="flex" data-child-css="2" data-shorthand="child-flex" data-step="1">
+				<legend>flex (child)</legend>
+				<input type="number" data-css-ctr name="flex" title="flex-grow" />
+				<input type="number" data-css-ctr name="flex" title="flex-shrink" />
+				<input type="text" data-css-ctr name="flex" title="flex-basis" />
+				<br /><span>default : 0 1 auto</span>
+				<button type="button" data-remove>REMOVE</button> -->
+				<!-- <p>(wrap의 넓이 - child 넓이의 합) / child grow의 합 * 해당 child의 grow = 해당 child의 넓이 값</p> -->
+			<!-- </fieldset> -->
+			<fieldset  data-property="flex-grow" data-child-css="2" data-longhand="child-flex">
+				<legend>flex-grow (child)</legend>
+				<input type="number" data-css-ctr name="flex-grow" title="flex-grow" />
+				<br /><span>default : 0</span>
+				<button type="button" data-remove>REMOVE</button>
+			</fieldset>
+			<fieldset data-property="flex-shrink" data-child-css="2" data-longhand="child-flex">
+				<legend>flex-shrink (child)</legend>
+				<input type="number" data-css-ctr name="flex-shrink" title="flex-shrink" />
+				<br /><span>default : 1</span>
+				<button type="button" data-remove>REMOVE</button>
+			</fieldset>
+			<fieldset data-property="flex-basis" data-child-css="2" data-longhand="child-flex">
+				<legend>flex-basis (child)</legend>
+				<input type="text" data-css-ctr name="flex-basis" title="flex-basis" style="width:150px;" />
+				<br /><span>default : auto</span>
+				<button type="button" data-remove>REMOVE</button>
+			</fieldset>
+			<fieldset data-property="order" data-child-css="2" data-step="2">
+				<legend>order (child)</legend>
+				<label><input type="number" data-css-ctr name="order" /></label>
+				<span>default : 0</span>
+				<button type="button" data-remove>REMOVE</button>
+			</fieldset>
+			<fieldset data-property="align-self" data-child-css="2" data-step="3">
+				<legend>align-self (child)</legend>
+				<label><input type="radio" data-css-ctr name="align-self" value="auto" /> auto (default)</label>
+				<label><input type="radio" data-css-ctr name="align-self" value="stretch" /> stretch</label>
+				<label><input type="radio" data-css-ctr name="align-self" value="center" /> center</label>
+				<label><input type="radio" data-css-ctr name="align-self" value="flex-start" /> flex-start</label>
+				<label><input type="radio" data-css-ctr name="align-self" value="flex-end" /> flex-end</label>
+				<label><input type="radio" data-css-ctr name="align-self" value="baseline" /> baseline</label>
+				<button type="button" data-remove>REMOVE</button>
+			</fieldset>
+		</div>
+	</div>
+</div>
+<!-- <ul>
+	<li><a href="https://www.w3schools.com/cssref/css3_pr_justify-content.asp">https://www.w3schools.com/cssref/css3_pr_justify-content.asp</a></li>
+	<li><a href="https://www.w3schools.com/cssref/css3_pr_align-content.asp">https://www.w3schools.com/cssref/css3_pr_align-content.asp</a></li>
+	<li><a href="https://www.w3schools.com/cssref/css3_pr_align-items.asp">https://www.w3schools.com/cssref/css3_pr_align-items.asp</a></li>
+	<li><a href="https://www.w3schools.com/cssref/css3_pr_align-self.asp">https://www.w3schools.com/cssref/css3_pr_align-self.asp</a></li>
+	<li><a href="https://www.w3schools.com/cssref/css3_pr_order.asp">https://www.w3schools.com/cssref/css3_pr_order.asp</a></li>
+	<li><a href="https://www.w3schools.com/cssref/css3_pr_flex-direction.asp">https://www.w3schools.com/cssref/css3_pr_flex-direction.asp</a></li>
+	<li><a href="https://www.w3schools.com/cssref/css3_pr_flex-flow.asp">https://www.w3schools.com/cssref/css3_pr_flex-flow.asp</a></li>
+	<li><a href="https://www.w3schools.com/cssref/css3_pr_flex-wrap.asp">https://www.w3schools.com/cssref/css3_pr_flex-wrap.asp</a></li>
+	<li><a href="https://www.w3schools.com/cssref/css3_pr_flex.asp">https://www.w3schools.com/cssref/css3_pr_flex.asp</a></li>
+	<li><a href="https://www.w3schools.com/cssref/css3_pr_flex-grow.asp">https://www.w3schools.com/cssref/css3_pr_flex-grow.asp</a></li>
+	<li><a href="https://www.w3schools.com/cssref/css3_pr_flex-shrink.asp">https://www.w3schools.com/cssref/css3_pr_flex-shrink.asp</a></li>
+	<li><a href="https://www.w3schools.com/cssref/css3_pr_flex-basis.asp">https://www.w3schools.com/cssref/css3_pr_flex-basis.asp</a></li>
+</ul> -->
+<script src="main.js"></script>
+<style type="text/css">
+	body {padding:0; margin:0; font-family:'맑은 고딕';}
+	.wrap {display:flex; height:100vh; width:1900px;}
+	.flex-wrap {flex:0 0 510px;  padding:10px 50px; box-sizing:border-box; height:900px; margin:0; background:#fff;}
+	.flex-parent {border:5px solid #000; width:400px; height:400px; margin:0 auto;}
+	.flex-child {min-width:60px; min-height:60px; line-height:60px; font-size: 40px; text-align: center; color: #FFFFFF;}
+	.hide {display: none;}
+	pre {display:inline; font-family:'맑은 고딕';}
+
+	.controls-container {display:flex; flex-direction:row; flex-wrap:wrap; flex:2 0 auto; z-index:50; position:relative; width:550px; padding:20px 0;}
+	.controls-container > * {flex:1 0 25%; padding:0 10px; margin-bottom:20px; box-sizing:border-box;}
+	.item-range {flex:1 0 100%;}
+	.preview,
+	.preview-child,
+	.preview-nth-child {margin:10px auto 0; padding:10px; box-sizing:border-box; background:#eee;}
+	fieldset {position:relative; transition:border-color 300ms 0s;}
+	fieldset.on {border-color:red;}
+	fieldset:after {content:''; display:block; clear:both;}
+	fieldset + fieldset {margin-top:20px;}
+	legend {font-weight:bold; padding:0 10px;}
+	label {display:block;}
+	input[type="text"],
+	input[type="number"] {width:50px;}
+	input[type="range"] {width:calc(100% - 10px);}
+	[data-remove] {position:absolute; top:0; right:15px;}
+	hr {margin:20px 0 10px;}
+
+	.btn {margin-top:10px;}
+	.btn button {height:30px; font-size:15px;}
+	.wrap.step1 [data-step="2"],
+	.wrap.step1 [data-step="3"] {display:none;}
+	.wrap.step2 [data-step="1"],
+	.wrap.step2 [data-step="3"] {display:none;}
+	.wrap.step3 [data-step="1"],
+	.wrap.step3 [data-step="2"] {display:none;}
+</style>
+
+
+</body>
+</html>
